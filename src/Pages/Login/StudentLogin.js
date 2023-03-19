@@ -1,10 +1,9 @@
 import React from 'react';
+import LoginForm from '../../components/LoginForm/LoginForm';
 
 const StudentLogin = () => {
     return (
-        <div>
-            <h1>student login</h1>
-        </div>
+        <LoginForm></LoginForm>
     );
 };
 

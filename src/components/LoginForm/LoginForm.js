@@ -1,11 +1,35 @@
 import React from 'react';
+import './LoginForm.css';
+import { useForm } from 'react-hook-form';
+import bgImg from '../../Assets/img1.jpg';
 
-const Login = () => {
+const LoginForm = () => {
+    const { register, handleSubmit, watch, formState: { errors } } = useForm()
+    const onSubmit = data => console.log(data);
     return (
-        <div>
-            <h1>form</h1>
-        </div>
+        <section className='design'>
+            <div className="register">
+                <div className="col-1">
+                    <h2>Sign In</h2>
+                    <span>register and enjoy the service</span>
+
+                    <form id='form' className='flex flex-col' onSubmit={handleSubmit(onSubmit)}>
+                        <input type="text" {...register("username")} placeholder='username' />
+                        <input type="text" {...register("password")} placeholder='password' />
+                        <input type="text" {...register("confirmpwd")} placeholder='confirm password' />
+                        <input type="text" {...register("mobile", { required: true, maxLength: 10 })} placeholder='mobile number' />
+                        {errors.mobile?.type === "required" && "Mobile Number is required"}
+                        {errors.mobile?.type === "maxLength" && "Max Length Exceed"}
+                        <button className='btn'>Sign In</button>
+                    </form>
+
+                </div>
+                <div className="col-2">
+                    <img src={bgImg} alt="" />
+                </div>
+            </div>
+        </section>
     );
 };
 
-export default Login;
+export default LoginForm;

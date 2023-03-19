@@ -1,10 +1,10 @@
 import React from 'react';
+import LoginForm from '../../components/LoginForm/LoginForm';
+
 
 const AdminLogin = () => {
     return (
-        <div>
-            <h1>admin login</h1>
-        </div>
+        <LoginForm></LoginForm>
     );
 };
 

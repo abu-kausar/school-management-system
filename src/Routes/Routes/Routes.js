@@ -1,6 +1,8 @@
+import Dashboard from "../../Pages/Dashboard/Dashboard";
 import AdminLogin from "../../Pages/Login/AdminLogin";
 import StudentLogin from "../../Pages/Login/StudentLogin";
 import TeacherLogin from "../../Pages/Login/TeacherLogin";
+import SignUp from "../../Pages/SignUp/SignUp";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Portal } = require("../../Layout/Portal");
@@ -16,7 +18,7 @@ const router = createBrowserRouter([
                 element: <LandingPages></LandingPages>
             },
             {
-                path: '/adminlogin',
+                path: 'adminlogin',
                 element: <AdminLogin></AdminLogin>
             },
             {
@@ -26,6 +28,14 @@ const router = createBrowserRouter([
             {
                 path: 'teacherlogin',
                 element: <TeacherLogin></TeacherLogin>
+            },
+            {
+                path: '/signup',
+                element: <SignUp></SignUp>
+            },
+            {
+                path: 'dashboard',
+                element: <Dashboard></Dashboard>
             }
         ]
     }
